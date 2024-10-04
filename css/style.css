@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(179,180,213,1) 0%, rgba(198,198,223,1) 35%, rgba(217,217,234,1) 100%);
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(13.5px);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    color: #0044cc;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #0044cc;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #0044cc;
+    box-shadow: 0 0 5px rgba(0, 68, 204, 0.3);
+}
+
+button {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(0,111,205,1) 0%, rgba(46,158,235,1) 100%);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: rgba(46, 158, 235, 0.8);
+    transform: scale(1.05);
+}
+
+.print-header {
+    display: none;
+}
+
+#posto-select {
+    margin-top: 15px;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.suggestions {
+    max-height: 200px; /* Aumenta a altura máxima */
+    overflow-y: auto; /* Rolagem quando a lista é grande */
+    position: absolute; /* Para posicionar em relação ao campo de entrada */
+    background-color: white; /* Fundo branco para contraste */
+    z-index: 1000; /* Garantir que fiquem acima de outros elementos */
+    width: calc(95% - 2px); /* Ajuste a largura para combinar com o campo de entrada */
+    border-radius: 5px; /* Adiciona cantos arredondados */
+}
+
+.suggestion-item {
+    padding: 15px; /* Aumenta o padding para itens de sugestões */
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0; /* Destaque ao passar o mouse */
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+    }
+}
+
+@media print {
+    @page {
+        margin: 15px; /* Reduzir a margem da página */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 12px; /* Reduzir o tamanho da fonte */
+    }
+    
+    .container {
+        max-width: 100%;
+        border: none;
+        background-color: white;
+        padding: 10px; /* Reduzir o padding */
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 20px; /* Ajustar o tamanho do título */
+        color: #000;
+        font-weight: bold;
+        margin: 5px 0; /* Reduzir a margem */
+    }
+
+    label {
+        font-size: 16px; /* Ajustar o tamanho das labels */
+        margin-top: 10px; /* Reduzir a margem */
+    }
+
+    input {
+        font-size: 15px; /* Ajustar o tamanho dos campos de entrada */
+        padding: 4px; /* Reduzir o padding */
+        margin-top: 2px; /* Reduzir a margem */
+    }
+
+    button {
+        display: none; /* Não exibir o botão na impressão */
+    }
+
+    #posto-select {
+        display: none !important; /* Não exibir o select na impressão */
+    }
+
+    .print-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; /* Reduzir a margem */
+        justify-content: space-between;
+        border-bottom: 1px solid #000;
+        padding-bottom: 5px; /* Reduzir o padding */
+    }
+
+    .print-header .logo {
+        width: 120px; /* Ajustar a largura do logo */
+        margin-right: 10px; /* Reduzir a margem */
+    }
+
+    .print-header .header-text p {
+        margin: 2px 0; /* Reduzir a margem */
+        font-size: 9px; /* Ajustar o tamanho do texto */
+    }
+
+    * {
+        color: #000;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+}

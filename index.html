@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Retorno</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+    <button type="button" id="alterar-posto">Alterar posto</button>
+
+    <select id="posto-select" style="display: none;">
+        <option value="Selecione sua UBS">Selecione sua UBS</option>
+        <option value="Zorides Zoratto">USF Zorides Zoratto</option>
+        <option value="Vila Vitória">USF Vila Vitória</option>
+        <option value="Vila Nova">USF Vila Nova</option>
+        <option value="Alto da Glória">USF Alto da Glória</option>
+        <option value="Concha">USF Concha</option>
+        <option value="Panorama">USF Panorama</option>
+    </select>
+
+        <div class="print-header">
+            <img src="images/esus-logo.png" alt="eSUS Logo" class="logo">
+            <div class="header-text">
+                <p>MINISTÉRIO DA SAÚDE</p>
+                <p>ESTADO DE PARANÁ</p>
+                <p>MUNICÍPIO DE LOANDA</p>
+                <p id="unidade-saude">UNIDADE DE SAÚDE</p>
+            </div>
+        </div>
+
+        <h1>Formulário de Retorno</h1>
+        <form id="form-retorno">
+            <label for="paciente">Paciente:</label>
+            <input type="text" id="paciente" name="paciente" required>
+
+            <label for="nome-mae">Nome da Mãe:</label>
+            <input type="text" id="nome-mae" name="nome-mae" required>
+
+            <label for="especialidade">Especialidade:</label>
+            <input type="text" id="especialidade" name="especialidade" required>
+            <div id="especialidade-suggestions" class="suggestions"></div>
+
+            <label for="medico">Médico:</label>
+            <input type="text" id="medico" name="medico" required>
+            <div id="medico-suggestions" class="suggestions"></div>
+
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+            <label for="cartao-sus">Cartão SUS:</label>
+            <input type="text" id="cartao-sus" name="cartao-sus" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="data-ultima-consulta">Data Última Consulta (Opcional):</label>
+            <input type="date" id="data-ultima-consulta" name="data-ultima-consulta">
+
+            <label for="retornar-para">Retornar para:</label>
+            <input type="text" id="retornar-para" name="retornar-para" required>
+
+            <button type="button" onclick="imprimirFormulario()">Imprimir Formulário</button>
+        </form>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
